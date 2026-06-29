@@ -39,10 +39,12 @@ PDF 업로드 + 정보 입력
 ### 최초 1회: GitHub 토큰 설정
 
 1. 페이지 우측 상단 **GitHub 설정** 버튼 클릭
-2. GitHub Personal Access Token(Fine-grained) 입력 후 저장
-   - 발급: GitHub → Settings → Developer settings → Fine-grained tokens
-   - 권한: 이 저장소 → Contents: **Read and write**
-   - 조직 관리자 승인 필요 시: `github.com/organizations/hyu-planning/settings/personal-access-token-requests`
+2. GitHub Personal Access Token(Classic) 입력 후 저장
+   - 발급: GitHub → Settings → Developer settings → **Personal access tokens → Tokens (classic)**
+   - **Generate new token (classic)** → Scopes: `repo` 체크
+   - 생성된 토큰(`ghp_`로 시작) 복사 후 입력
+
+> **Fine-grained token은 조직 정책상 사용 불가.** Classic token을 사용해야 합니다.
 
 ### 일반 사용
 
