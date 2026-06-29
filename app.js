@@ -318,7 +318,7 @@ async function pushToGitHub(content){
   const token=getGHToken();
   if(!token){openTokenSettings();return false;}
   const api=`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`;
-  const headers={'Authorization':'token '+token,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  const headers={'Authorization':'Bearer '+token,'Content-Type':'application/json','Accept':'application/vnd.github+json'};
   const getRes=await fetch(api+'?ref='+GH_BRANCH,{headers});
   if(!getRes.ok){const e=await getRes.json();throw new Error(e.message||'파일 정보 조회 실패');}
   const {sha}=await getRes.json();
